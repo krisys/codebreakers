@@ -1,0 +1,10 @@
+LICENSE.txt
+MANIFEST.in
+README.rst
+setup.cfg
+ideone/__init__.py
+pip-egg-info/ideone.egg-info/PKG-INFO
+pip-egg-info/ideone.egg-info/SOURCES.txt
+pip-egg-info/ideone.egg-info/dependency_links.txt
+pip-egg-info/ideone.egg-info/requires.txt
+pip-egg-info/ideone.egg-info/top_level.txt
