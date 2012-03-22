@@ -2,7 +2,55 @@
 {% block head %}
   <link rel="stylesheet" href="{{ STATIC_URL }}css/reset.css" type="text/css" media="screen" charset="utf-8" />
   <link rel="stylesheet" href="{{ STATIC_URL }}css/main.css" type="text/css" media="screen" charset="utf-8" />
+  <link rel="stylesheet" href="{{ STATIC_URL }}css/grid.css" type="text/css" media="screen" charset="utf-8" />
+  <link href="http://fonts.googleapis.com/css?family=PT Sans&subset=latin" rel="stylesheet" type="text/css">
 {% endblock %}
+
 {% block body %}
+    <div class="page-background"> 
+      <div class="container_12"> 
+        <div class="grid_6 header"> 
+          <a href="/" style="color:black;text-decoration:none;"><h1>BMSCE Codebreakers</h1></a> 
+        </div> 
+        <div class="grid_6" align="right">
+          {% if not request.user.is_authenticated %} 
+          <form action="/login" method="POST"> {% csrf_token %}
+            <input type="text" name="username" placeholder="Username"/> 
+            <input type="password" name="password" placeholder="Password"/>
+            <input type="submit" value="Login"/>
+          </form>
+          {% endif %}
+        </div>
+        <div class="clear"></div> 
+      </div> 
+
+      <div class="container_12"> 
+          <div class="grid_2"> 
+            <div class="grid_2 menu"> 
+              <ul> 
+                <li><a class="icon home" href="/">Home</a></li> 
+                <li><a class="icon about" href="/about" >About</a></li> 
+                <li><a class="icon challenges" href="/challenges" >Challenges</a></li> 
+              </ul> 
+            </div> 
+          </div>
+ 
+    <div class="grid_10"> 
+      <div style="clear:both;"></div> 
+        <div class="content-box-wrapper"> 
+          <div class="content-box"> 
+              {% block content %}
+              {% endblock %}
+          </div> 
+        </div>
+      </div> 
+
+      <div style="clear:both;"></div> 
+      
+    </div> 
+  </div> 
+  <div class="footer">
+    
+  </div>
 {% endblock %}
 

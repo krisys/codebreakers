@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.conf.settings import IDEONE_USERNAME, IDEONE_PASSWORD
+from django.conf import settings
 # Create your models here.
 
 class Contest(models.Model):
@@ -15,6 +15,8 @@ class Problem(models.Model):
     contest = models.ForeignKey(Contest)
     name = models.CharField(max_length=200)
     problem_statement = models.TextField()
+    input_specs = models.TextField()
+    output_requirements = models.TextField()
     sample_input = models.TextField()
     sample_output = models.TextField()
     test_input = models.TextField()
@@ -59,7 +61,7 @@ class Submission(models.Model):
         """
         
         from ideone import Ideone
-        client = Ideone(IDEONE_USERNAME, IDEONE_PASSWORD)
+        client = Ideone(settings.IDEONE_USERNAME, settings.IDEONE_PASSWORD)
 
         submission = client.create_submission(self.source_code, 
             language_name=self.language.lang_name, 

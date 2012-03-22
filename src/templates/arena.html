@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+  <script language="Javascript" type="text/javascript" src="{{STATIC_URL}}edit_area/edit_area_full.js"></script>
+	<script language="Javascript" type="text/javascript">
+		$(document).ready(function(){
+	    editAreaLoader.init({
+		    id: "codearea"	// id of the textarea to transform	
+		    ,start_highlight: true	
+		    ,font_size: "10"
+		    ,font_family: "monospace"
+		    ,allow_resize: "n"
+		    ,allow_toggle: false
+		    ,language: "en"
+		    ,syntax:"python"
+		    ,syntax_selection_allow: "python,c,cpp,java,ruby"
+		    ,toolbar: "syntax_selection, |, select_font"
+		    ,replace_tab_by_spaces: 4
+	    });
+      
+      $("#submit_code").click(function(){
+        var source_code = editAreaLoader.getValue("codearea");
+        var language = editAreaLoader.getSyntax("codearea");
+        var problem_id = '{{problem.id}}';
+
+	      $.getJSON("/compile/",{'code': source_code, 'language' : language, 'id': problem_id},
+	        function(response){
+	          alert('hello world');
+            $("#output").text("Success");
+          });
+      });      
+		});
+  </script>
+{% endblock %}
+
+{% block content %}
+<div class="heading">
+  Problem Statement
+</div>
+
+<div class="problem-segment">
+  {{problem.statement}}
+  BuggyD suffers from AIBOHPHOBIA - the fear of Palindromes. A palindrome is a string that reads the same forward and backward.
+
+To cure him of this fatal disease, doctors from all over the world discussed his fear and decided to expose him to large number of palindromes. To do this, they decided to play a game with BuggyD. The rules of the game are as follows:
+
+BuggyD has to supply a string S. The doctors have to add or insert characters to the string to make it a palindrome. Characters can be inserted anywhere in the string.
+
+The doctors took this game very lightly and just appended the reverse of S to the end of S, thus making it a palindrome. For example, if S = "fft", the doctors change the string to "ffttff".
+
+Nowadays, BuggyD is cured of the disease (having been exposed to a large number of palindromes), but he still wants to continue the game by his rules. He now asks the doctors to insert the minimum number of characters needed to make S a palindrome. Help the doctors accomplish this task.
+
+For instance, if S = "fft", the doctors should change the string to "tfft", adding only 1 character.
+</div>
+
+<div class="heading">
+  Input
+</div>
+<div class="problem-segment">
+ {{problem.statement}} 
+ The first line of the input contains an integer t, the number of test cases. t test cases follow.
+
+Each test case consists of one line, the string S. The length of S will be no more than 6100 characters, and S will contain no whitespace characters.
+</div>
+
+<div class="heading">
+  Output
+</div>
+<div class="problem-segment">
+For each test case output one line containing a single integer denoting the minimum number of characters that must be inserted into S to make it a palindrome.
+</div>
+
+<div>
+  Example - Input
+</div>
+<div class="problem-segment io">
+1 <br/>
+fft
+</div>
+
+<div>
+  Example - Output
+</div>
+<div class="problem-segment io">
+1
+</div>
+
+<div class="clear" style="margin-bottom:20px;"></div>
+
+<textarea rows="40" id="codearea" style="width:100%">
+from future import antigravity
+</textarea>
+  
+<div align="right">
+  <span style="float:left;" id="output">Output</span><button id="submit_code">Submit code</button>
+</div>
+{% endblock %}
+
+

@@ -1,2 +1,210 @@
-/* Your custom styles here */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
 
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+body { line-height: 1; }
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+table { border-collapse: collapse; border-spacing: 0; }
+
+body {
+  font-family: 'PT Sans', sans-serif;
+  background:url('../images/graphy.png');
+  color: #333;
+}
+
+input[type="text"], input[type="password"] {
+  border:1px solid #ddd;
+  padding:5px;
+}
+
+.header {
+  height: 80px;
+  padding-top: 10px;
+  /*background: url('img/header.png') no-repeat; */
+  font-size: 42px;
+  color: #3173b
+  margin-bottom:35px;
+}
+
+.content-box-wrapper{
+  background-color: #fff;
+  clear: both;
+  min-height: 400px;
+  line-height: 1.5em;
+}
+
+.content-box {
+  padding:10px;
+}
+
+.menu {
+  /*border-top: #9d4ec0 1px solid;
+  border-bottom: #9d4ec0 1px solid;*/
+  padding: 0px;
+  margin: 0px 0px 0px 0px;
+  font-size: 12px;
+}
+
+.menu ul {
+  list-style: none;
+  margin: 2px;
+  padding: 0px;
+}
+
+.menu ul li {
+  padding:9px;
+  border-bottom:1px solid #eee;
+  background-color: #fff;
+}
+
+.menu ul li a {
+  color: #888;
+  text-decoration: none;
+  margin-left: 6px;
+}
+
+.menu ul li a:hover {
+  color: black;
+  text-decoration: none;
+}
+
+h2 {
+  font-weight: normal;
+  font-size: 24px;
+  margin-bottom: 15px;
+  padding-bottom: 3px;
+  padding:10px;
+}
+
+.title{
+  color: #fff;
+  background-color:#439327;
+  box-shadow: 0px 3px 50px rgba(30,30,30,0.3) inset; 
+}
+
+p{
+  padding:15px;
+}
+
+.container-box{
+    padding:10px;
+}
+
+.bloglink{
+    background-color:#fafafa;
+    padding:7px;
+}
+
+.bloglink a{
+    text-decoration:none;
+    color:#000;
+}
+
+.teaser{
+    padding:10px;
+    border:1px solid #eee;
+    font-size:0.9em;
+}
+
+.subtitle{
+  padding:8px;
+  font-size:1.1em;
+  background-color:#fafafa;
+  border:1px solid #eee;
+}
+
+/*
+.icon{
+  background-repeat: no-repeat;
+  padding-left:20px;
+  padding-bottom:2px;
+}
+
+
+.home{
+  background-image: url('../images/icons/home.png');
+}
+
+.blog{
+  background-image: url('../images/icons/blogger.gif');
+}
+
+.locations{
+  background-image: url('../images/icons/locations.png');
+}
+
+.activities{
+  background-image: url('../images/icons/activities.png');
+}
+
+.daycare{
+  background-image: url('../images/icons/daycare.png');
+}
+
+.maths{
+  background-image: url('../images/icons/maths.png');
+}
+
+.vision{
+  background-image: url('../images/icons/vision.png');
+}
+
+.approach{
+  background-image: url('../images/icons/approach.png');
+}
+
+.about{
+  background-image: url('../images/icons/aboutus.png');
+}
+
+.faqs{
+  background-image: url('../images/icons/faqs.png');
+}
+
+.events{
+  background-image: url('../images/icons/events.png');
+}
+*/
+.question{
+  padding:15px;
+  font-weight:bold;
+}
+
+.answer {
+  padding-left:15px;
+  padding-right:15px;
+}
+
+.vspace{
+  padding-top:15px;
+}
+
+.footer{
+  min-height:80px;
+}
+
+.heading{
+  margin-top:6px;
+  font-weight:bold;
+}
+
+.problem-segment{
+  padding:3px;
+  margin-bottom:10px;
+  background-color:#fcfcfc;
+  border-radius:4px;
+  border:1px solid #ddd;
+  color:#777;
+  font-size:0.9em;
+}
+
+.io{
+  font-family:courier;
+  padding-left:5px;
+}
