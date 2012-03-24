@@ -880,7 +880,7 @@ EditAreaLoader.prototype ={
     },
     
     getSyntax : function(id){
-      fs = window.frames;
+      var fs = window.frames;
       return fs["frame_" + id].editArea.settings["syntax"];
     },
 
